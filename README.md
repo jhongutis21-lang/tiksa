@@ -198,6 +198,7 @@ JWT_EXPIRES_IN=8h
 | `npm run build`| Build para producción          |
 | `npm run preview`| Vista previa del build        |
 
+Todo es posible
 ---
 
 ## Licencia
