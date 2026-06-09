@@ -510,7 +510,7 @@ export default function POS() {
               onKeyDown={(e) => {
                 if (e.key === 'ArrowDown') { e.preventDefault(); setSelectedIndex((prev) => Math.min(prev + 1, resultados.length - 1)); }
                 if (e.key === 'ArrowUp') { e.preventDefault(); setSelectedIndex((prev) => Math.max(prev - 1, 0)); }
-                if (e.key === ' ' && (e.ctrlKey || e.metaKey) && resultados.length > 0) {
+                if (e.key === 'Control' && resultados.length > 0) {
                   const prod = resultados[selectedIndex] || resultados[0];
                   if (prod) {
                     setSeleccionados(prev => { const n = new Set(prev); n.has(prod.id) ? n.delete(prod.id) : n.add(prod.id); return n; });
