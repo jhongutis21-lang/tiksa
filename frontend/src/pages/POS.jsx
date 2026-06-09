@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { User, Truck, CreditCard, Barcode, Tag, MessageSquare, Plus, Trash2, Printer, Square, CheckSquare, FileText, Search, X, ShoppingCart, Banknote, Smartphone, Building2 } from 'lucide-react';
 import useAuth from '../hooks/useAuth';
 import api from '../services/api';
@@ -16,7 +17,7 @@ const PAGO_ICONS = {
 
 const PAGO_STYLES = {
   efectivo: 'bg-green/10 text-green border-green/30 hover:bg-green/20 active:bg-green/30',
-  debito: 'bg-blue/10 text-blue border-blue/30 hover:bg-blue/20 active:bg-blue/30',
+  debito: 'bg-azul/10 text-azul border-azul/30 hover:bg-azul/20 active:bg-azul/30',
   credito: 'bg-red/10 text-red border-red/30 hover:bg-red/20 active:bg-red/30',
   transferencia: 'bg-purple/10 text-purple border-purple/30 hover:bg-purple/20 active:bg-purple/30',
   nequi: 'bg-pink/10 text-pink border-pink/30 hover:bg-pink/20 active:bg-pink/30',
