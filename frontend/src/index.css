@@ -5,7 +5,7 @@
 @layer base {
   body {
     font-family: 'DM Sans', sans-serif;
-    background-color: #f0f2f5;
+    background-color: #f1f5f9;
   }
 
   .font-mono {
@@ -15,31 +15,31 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors font-medium;
+    @apply bg-primary text-white px-5 py-2.5 rounded-xl hover:bg-primary/90 active:bg-primary/80 transition-all font-medium shadow-sm hover:shadow-md hover:shadow-primary/20;
   }
 
   .btn-secondary {
-    @apply bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300 transition-colors font-medium;
+    @apply bg-gray-100 text-gray-700 px-5 py-2.5 rounded-xl hover:bg-gray-200 active:bg-gray-300 transition-all font-medium;
   }
 
   .btn-danger {
-    @apply bg-red text-white px-4 py-2 rounded-lg hover:bg-red/90 transition-colors font-medium;
+    @apply bg-red text-white px-5 py-2.5 rounded-xl hover:bg-red/90 active:bg-red/80 transition-all font-medium shadow-sm hover:shadow-md hover:shadow-red/20;
   }
 
   .btn-success {
-    @apply bg-green text-white px-4 py-2 rounded-lg hover:bg-green/90 transition-colors font-medium;
+    @apply bg-green text-white px-5 py-2.5 rounded-xl hover:bg-green/90 active:bg-green/80 transition-all font-medium shadow-sm hover:shadow-md hover:shadow-green/20;
   }
 
   .input-field {
-    @apply w-full px-3 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary;
+    @apply w-full px-3.5 py-2.5 border border-gray-200 bg-white rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/50 focus:bg-white transition-all text-sm;
   }
 
   .card {
-    @apply bg-card rounded-xl shadow-sm border border-border p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200;
+    @apply bg-white rounded-xl shadow-[0_1px_3px_0_rgb(0_0_0_/_0.06),0_1px_2px_-1px_rgb(0_0_0_/_0.06)] border border-gray-100 p-6 hover:shadow-[0_4px_12px_0_rgb(0_0_0_/_0.08),0_2px_4px_-2px_rgb(0_0_0_/_0.06)] hover:-translate-y-0.5 transition-all duration-200;
   }
 
   .card-static {
-    @apply bg-card rounded-xl shadow-sm border border-border;
+    @apply bg-white rounded-xl shadow-[0_1px_3px_0_rgb(0_0_0_/_0.06),0_1px_2px_-1px_rgb(0_0_0_/_0.06)] border border-gray-100;
   }
 
   .badge-green {
@@ -53,10 +53,22 @@
   .badge-red {
     @apply bg-red/10 text-red px-2 py-0.5 rounded-full text-xs font-medium;
   }
+
+  .table-header {
+    @apply text-left text-gray-500 border-b border-gray-100 bg-gray-50/80 text-xs uppercase tracking-wider font-semibold;
+  }
+
+  .table-cell {
+    @apply py-2.5 px-3 text-sm;
+  }
+
+  .table-row {
+    @apply border-b border-gray-50 hover:bg-primary/[0.02] transition-colors;
+  }
 }
 
 @keyframes slide-up {
-  from { transform: translateY(20px); opacity: 0; }
+  from { transform: translateY(16px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
 
@@ -80,4 +92,31 @@
 
 .animate-scale-in {
   animation: scale-in 0.2s ease-out;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgb(5 150 105 / 0.3); }
+  50% { box-shadow: 0 0 0 6px rgb(5 150 105 / 0); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
 }

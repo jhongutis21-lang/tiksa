@@ -677,7 +677,7 @@ export default function POS() {
         <span><kbd className="bg-gray-100 px-1.5 py-0.5 rounded font-mono text-gray-500 font-medium">Ctrl+B</kbd> Barras</span>
         <span><kbd className="bg-gray-100 px-1.5 py-0.5 rounded font-mono text-gray-500 font-medium">Ctrl+Enter</kbd> Facturar</span>
         <span><kbd className="bg-gray-100 px-1.5 py-0.5 rounded font-mono text-gray-500 font-medium">↑</kbd><kbd className="bg-gray-100 px-1.5 py-0.5 rounded font-mono text-gray-500 font-medium ml-0.5">↓</kbd> Navegar</span>
-        <span><kbd className="bg-gray-100 px-1.5 py-0.5 rounded font-mono text-gray-500 font-medium">Espacio</kbd> Marcar</span>
+        <span><kbd className="bg-gray-100 px-1.5 py-0.5 rounded font-mono text-gray-500 font-medium">Ctrl</kbd> Marcar</span>
         <span><kbd className="bg-gray-100 px-1.5 py-0.5 rounded font-mono text-gray-500 font-medium">+</kbd>/<kbd className="bg-gray-100 px-1.5 py-0.5 rounded font-mono text-gray-500 font-medium">-</kbd> Cant</span>
         <span><kbd className="bg-gray-100 px-1.5 py-0.5 rounded font-mono text-gray-500 font-medium">Ctrl+D</kbd> Eliminar</span>
         <span><kbd className="bg-gray-100 px-1.5 py-0.5 rounded font-mono text-gray-500 font-medium">Ctrl+Q</kbd> Limpiar</span>

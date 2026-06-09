@@ -18,8 +18,8 @@ export default function Sidebar() {
     <aside className="w-64 bg-sidebar min-h-screen flex flex-col">
       <div className="p-6 pb-4">
         <h1 className="text-white text-xl font-bold flex items-center gap-2.5">
-          <span className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white text-sm font-bold">T</span>
-          tiksa
+          <span className="w-9 h-9 bg-gradient-to-br from-primary to-primary/80 rounded-xl flex items-center justify-center text-white text-sm font-bold shadow-lg shadow-primary/30">T</span>
+          <span className="tracking-tight">tiksa</span>
         </h1>
       </div>
 
@@ -32,7 +32,7 @@ export default function Sidebar() {
 
           return (
             <div key={section.label}>
-              <p className="px-3 mb-1 text-[10px] font-semibold uppercase tracking-widest text-gray-500">
+              <p className="px-3 mb-1.5 text-[10px] font-semibold uppercase tracking-widest text-gray-600">
                 {section.label}
               </p>
               <div className="space-y-0.5">
@@ -41,15 +41,22 @@ export default function Sidebar() {
                     key={item.path}
                     to={item.path}
                     className={({ isActive }) =>
-                      `flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-all duration-150 ${
+                      `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all duration-150 relative ${
                         isActive
-                          ? 'bg-white/10 text-white font-medium shadow-sm'
+                          ? 'text-white font-medium bg-white/10'
                           : 'text-gray-400 hover:bg-white/5 hover:text-gray-200'
                       }`
                     }
                   >
-                    {item.icon}
-                    <span>{item.label}</span>
+                    {({ isActive }) => (
+                      <>
+                        {isActive && <span className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 h-5 bg-primary rounded-full shadow-sm shadow-primary/50" />}
+                        <span className={`${isActive ? 'text-primary' : 'text-gray-500/70'} transition-colors flex-shrink-0`}>
+                          {item.icon}
+                        </span>
+                        <span>{item.label}</span>
+                      </>
+                    )}
                   </NavLink>
                 ))}
               </div>

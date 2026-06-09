@@ -446,7 +446,7 @@ export default function Dashboard() {
                   <div key={f.id} className="flex items-center justify-between py-2 text-sm border-b border-border/30 last:border-0">
                     <span className="font-mono text-gray-400 w-20 text-xs">{f.numero}</span>
                     <span className="font-mono font-medium text-gray-800 w-24 text-right">{formatCOP(f.total)}</span>
-                    <span className={`text-[10px] font-medium px-2 py-0.5 rounded-full w-18 text-center capitalize ${f.medio_pago === 'efectivo' ? 'bg-green/10 text-green' : f.medio_pago === 'debito' ? 'bg-blue/10 text-blue' : f.medio_pago === 'credito' ? 'bg-red/10 text-red' : 'bg-purple/10 text-purple'}`}>
+                        <span className={`text-[10px] font-medium px-2 py-0.5 rounded-full w-18 text-center capitalize ${f.medio_pago === 'efectivo' ? 'bg-green/10 text-green' : f.medio_pago === 'debito' ? 'bg-primary/10 text-primary' : f.medio_pago === 'credito' ? 'bg-red/10 text-red' : 'bg-purple/10 text-purple'}`}>
                       {f.medio_pago}
                     </span>
                     <span className="text-gray-500 flex-1 text-right truncate ml-2 text-xs">{f.cliente_nombre}</span>
