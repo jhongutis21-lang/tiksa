@@ -11,7 +11,8 @@ exports.listar = (req, res) => {
     ).all(req.usuario.id);
 
     const parsed = temporales.map(t => ({ ...t, datos: safeParse(t.datos) }));
-    res.json(parsed);
+    const filtrados = parsed.filter(t => t.datos.items?.length > 0);
+    res.json(filtrados);
   } catch (err) {
     console.error('Error al listar temporales:', err);
     res.status(500).json({ error: 'Error al listar temporales' });
@@ -24,6 +25,9 @@ exports.guardar = (req, res) => {
 
     if (!datos) {
       return res.status(400).json({ error: 'Datos requeridos' });
+    }
+    if (!datos.items || datos.items.length === 0) {
+      return res.status(400).json({ error: 'Debe haber al menos un producto' });
     }
 
     const existing = db.prepare(

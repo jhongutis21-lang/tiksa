@@ -124,8 +124,7 @@ export default function POS() {
         if (res.data.length > 0) {
           const t = res.data[0];
           const tieneItems = t.datos.items && t.datos.items.length > 0;
-          const tieneCliente = t.datos.cliente_id;
-          if (tieneItems || tieneCliente) {
+          if (tieneItems) {
             setTemporalPendiente(t);
             setTemporalId(t.id);
             setShowTemporalModal(true);
@@ -373,7 +372,7 @@ export default function POS() {
   useEffect(() => {
     const interval = setInterval(() => {
       const ref = temporalDataRef.current;
-      if (ref.items.length === 0 && !ref.clienteActual && !ref.medioPago) return;
+      if (ref.items.length === 0) return;
       const datos = {
         items: ref.items,
         cliente_id: ref.clienteActual?.id,
@@ -395,7 +394,7 @@ export default function POS() {
 
     const handleBeforeUnload = () => {
       const ref = temporalDataRef.current;
-      if (ref.items.length === 0 && !ref.clienteActual && !ref.medioPago) return;
+      if (ref.items.length === 0) return;
       const token = localStorage.getItem('tiksa_token');
       const baseUrl = import.meta.env.VITE_API_URL || '/api';
       const datos = {
