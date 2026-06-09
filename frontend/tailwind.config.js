@@ -11,12 +11,12 @@ export default {
         mono: ['DM Mono', 'monospace'],
       },
       colors: {
-        sidebar: '#1a1625',
+        sidebar: '#231b38',
         primary: {
-          DEFAULT: '#8b5cf6',
-          50: '#f5f3ff', 100: '#ede9fe', 200: '#ddd6fe', 300: '#c4b5fd',
-          400: '#a78bfa', 500: '#8b5cf6', 600: '#7c3aed', 700: '#6d28d9',
-          800: '#5b21b6', 900: '#4c1d95',
+          DEFAULT: '#9333ea',
+          50: '#faf5ff', 100: '#f3e8ff', 200: '#e9d5ff', 300: '#d8b4fe',
+          400: '#c084fc', 500: '#a855f7', 600: '#9333ea', 700: '#7e22ce',
+          800: '#6b21a8', 900: '#581c87',
         },
         bg: '#f1f5f9',
         card: '#ffffff',
