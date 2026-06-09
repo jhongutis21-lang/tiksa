@@ -103,7 +103,7 @@ export default function Usuarios() {
                 <td className="p-3 text-gray-400 text-xs">{new Date(u.creado_en).toLocaleDateString('es-CO')}</td>
                 <td className="p-3">
                   <div className="flex gap-2">
-                    <button onClick={() => abrirEditar(u)} className="text-blue hover:underline text-xs">Editar</button>
+                    <button onClick={() => abrirEditar(u)} className="text-primary hover:underline text-xs">Editar</button>
                     <button onClick={() => toggleEstado(u.id, !u.activo)} className={`hover:underline text-xs ${u.activo ? 'text-red' : 'text-green'}`}>
                       {u.activo ? 'Desactivar' : 'Activar'}
                     </button>

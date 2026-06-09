@@ -15,7 +15,7 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-blue text-white px-4 py-2 rounded-lg hover:bg-blue/90 transition-colors font-medium;
+    @apply bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors font-medium;
   }
 
   .btn-secondary {
@@ -31,7 +31,7 @@
   }
 
   .input-field {
-    @apply w-full px-3 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue/30 focus:border-blue;
+    @apply w-full px-3 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary;
   }
 
   .card {

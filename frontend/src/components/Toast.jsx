@@ -5,7 +5,7 @@ const CONFIG = {
   success: { bar: 'bg-green' },
   error: { bar: 'bg-red' },
   warning: { bar: 'bg-yellow' },
-  info: { bar: 'bg-blue' },
+  info: { bar: 'bg-primary' },
 };
 
 export default function Toast({ mensaje, tipo = 'info', duracion = 5000, onClose, accion }) {
@@ -32,7 +32,7 @@ export default function Toast({ mensaje, tipo = 'info', duracion = 5000, onClose
           {accion && (
             <button
               onClick={() => { accion.onClick(); setVisible(false); onClose?.(); }}
-              className="text-xs font-semibold text-blue hover:text-blue/80 transition-colors"
+              className="text-xs font-semibold text-primary hover:text-primary/80 transition-colors"
             >
               {accion.label}
             </button>

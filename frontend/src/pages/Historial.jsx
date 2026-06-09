@@ -250,17 +250,17 @@ export default function Historial() {
         </button>
         {mostrarPrimera && (
           <>
-            <button onClick={() => irPagina(1)} className={`px-3 py-1 rounded text-sm font-medium ${page === 1 ? 'bg-blue text-white' : 'hover:bg-gray-100 text-gray-700'}`}>1</button>
+            <button onClick={() => irPagina(1)} className={`px-3 py-1 rounded text-sm font-medium ${page === 1 ? 'bg-primary text-white' : 'hover:bg-gray-100 text-gray-700'}`}>1</button>
             <span className="text-gray-400 text-sm select-none">...</span>
           </>
         )}
         {paginas.map((p) => (
-          <button key={p} onClick={() => irPagina(p)} className={`px-3 py-1 rounded text-sm font-medium ${p === page ? 'bg-blue text-white' : 'hover:bg-gray-100 text-gray-700'}`}>{p}</button>
+          <button key={p} onClick={() => irPagina(p)} className={`px-3 py-1 rounded text-sm font-medium ${p === page ? 'bg-primary text-white' : 'hover:bg-gray-100 text-gray-700'}`}>{p}</button>
         ))}
         {mostrarUltima && (
           <>
             <span className="text-gray-400 text-sm select-none">...</span>
-            <button onClick={() => irPagina(totalPages)} className={`px-3 py-1 rounded text-sm font-medium ${page === totalPages ? 'bg-blue text-white' : 'hover:bg-gray-100 text-gray-700'}`}>{totalPages}</button>
+            <button onClick={() => irPagina(totalPages)} className={`px-3 py-1 rounded text-sm font-medium ${page === totalPages ? 'bg-primary text-white' : 'hover:bg-gray-100 text-gray-700'}`}>{totalPages}</button>
           </>
         )}
         <button onClick={() => irPagina(page + 1)} disabled={page >= totalPages} className="p-1.5 rounded hover:bg-gray-100 disabled:opacity-30 disabled:cursor-not-allowed">
@@ -298,7 +298,7 @@ export default function Historial() {
                 onClick={() => { setPresetActivo(id); setDesde(d); setHasta(h); setPage(1); }}
                 className={`px-3 py-1.5 rounded-lg text-sm font-medium border transition-colors ${
                   presetActivo === id
-                    ? 'bg-blue text-white border-blue'
+                    ? 'bg-primary text-white border-primary'
                     : 'border-border text-gray-600 hover:bg-gray-100'
                 }`}
               >
@@ -354,7 +354,7 @@ export default function Historial() {
             </div>
           </div>
           <div className="self-end flex gap-2">
-            <button onClick={() => { setOrden(o => o === 'asc' ? 'desc' : 'asc'); setPage(1); }} className={`btn-secondary text-sm flex items-center gap-1.5 ${orden === 'asc' ? 'border-blue text-blue' : ''}`} title={orden === 'asc' ? 'Más antiguas primero' : 'Más recientes primero'}>
+            <button onClick={() => { setOrden(o => o === 'asc' ? 'desc' : 'asc'); setPage(1); }} className={`btn-secondary text-sm flex items-center gap-1.5 ${orden === 'asc' ? 'border-primary text-primary' : ''}`} title={orden === 'asc' ? 'Más antiguas primero' : 'Más recientes primero'}>
               <ArrowUpDown size={16} />
               {orden === 'asc' ? '↑ Antiguas' : '↓ Recientes'}
             </button>
@@ -418,7 +418,7 @@ export default function Historial() {
                 </td>
                 <td className="p-3">
                   <div className="flex items-center justify-center gap-1">
-                    <button onClick={() => verDetalle(f.id)} className="p-1.5 rounded-lg hover:bg-gray-100 transition-colors text-blue" title="Ver detalle">
+                    <button onClick={() => verDetalle(f.id)} className="p-1.5 rounded-lg hover:bg-gray-100 transition-colors text-primary" title="Ver detalle">
                       <Eye size={16} />
                     </button>
                     {f.estado === 'activa' && tienePermiso('anular_factura') && (
@@ -446,10 +446,10 @@ export default function Historial() {
           </tbody>
           {facturas.length > 0 && (
             <tfoot>
-              <tr className="sticky bottom-0 border-t-2 border-blue-200 bg-blue-50">
+              <tr className="sticky bottom-0 border-t-2 border-primary-200 bg-primary-50">
                 <td colSpan="2"></td>
                 <td className="p-3 text-right text-xs text-gray-400 font-medium">Total página:</td>
-                <td className="p-3 text-right font-semibold font-mono text-blue text-base">{formatCOP(facturas.reduce((s, f) => s + f.total, 0))}</td>
+                <td className="p-3 text-right font-semibold font-mono text-primary text-base">{formatCOP(facturas.reduce((s, f) => s + f.total, 0))}</td>
                 <td colSpan="5"></td>
               </tr>
             </tfoot>
@@ -502,7 +502,7 @@ export default function Historial() {
                 <p className="text-sm text-gray-500">Subtotal: <span className="font-mono">{formatCOP(selected.subtotal)}</span></p>
                 <p className="text-sm text-gray-500">IVA 19%: <span className="font-mono">{formatCOP(selected.iva_19)}</span></p>
                 <p className="text-sm text-gray-500">IVA 5%: <span className="font-mono">{formatCOP(selected.iva_5)}</span></p>
-                <p className="text-lg font-bold font-mono text-blue">Total: {formatCOP(selected.total)}</p>
+                <p className="text-lg font-bold font-mono text-primary">Total: {formatCOP(selected.total)}</p>
               </div>
             </div>
 

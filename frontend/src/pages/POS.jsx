@@ -17,7 +17,7 @@ const PAGO_ICONS = {
 
 const PAGO_STYLES = {
   efectivo: 'bg-green/10 text-green border-green/30 hover:bg-green/20 active:bg-green/30',
-  debito: 'bg-azul/10 text-azul border-azul/30 hover:bg-azul/20 active:bg-azul/30',
+  debito: 'bg-blue/10 text-blue border-blue/30 hover:bg-blue/20 active:bg-blue/30',
   credito: 'bg-red/10 text-red border-red/30 hover:bg-red/20 active:bg-red/30',
   transferencia: 'bg-purple/10 text-purple border-purple/30 hover:bg-purple/20 active:bg-purple/30',
   nequi: 'bg-pink/10 text-pink border-pink/30 hover:bg-pink/20 active:bg-pink/30',
@@ -523,7 +523,7 @@ export default function POS() {
                 }
               }}
               placeholder="Buscar producto (Ctrl+K)..."
-              className="w-full pl-9 pr-3 py-2.5 bg-gray-50 border-2 border-gray-100 rounded-xl focus:bg-white focus:border-blue focus:outline-none text-sm transition-all"
+              className="w-full pl-9 pr-3 py-2.5 bg-gray-50 border-2 border-gray-100 rounded-xl focus:bg-white focus:border-primary focus:outline-none text-sm transition-all"
             />
             {busqueda && (
               <button onClick={() => { setBusqueda(''); setResultados([]); busquedaRef.current?.focus(); }}
@@ -540,10 +540,10 @@ export default function POS() {
                     key={p.id}
                     onClick={() => seleccionarProducto(p)}
                     onMouseEnter={() => setSelectedIndex(i)}
-                    className={`w-full text-left px-3.5 py-2.5 flex items-center justify-between text-sm border-b border-border/30 last:border-0 ${i === selectedIndex ? 'bg-blue/10' : 'hover:bg-gray-50'}`}
+                    className={`w-full text-left px-3.5 py-2.5 flex items-center justify-between text-sm border-b border-border/30 last:border-0 ${i === selectedIndex ? 'bg-primary/10' : 'hover:bg-gray-50'}`}
                   >
                     <div className="flex items-center gap-2.5 min-w-0">
-                      {seleccionados.has(p.id) ? <CheckSquare size={16} className="text-blue shrink-0" /> : <Square size={16} className="text-gray-400 shrink-0" />}
+                      {seleccionados.has(p.id) ? <CheckSquare size={16} className="text-primary shrink-0" /> : <Square size={16} className="text-gray-400 shrink-0" />}
                       <div>
                         <span className="font-medium text-gray-800">{base}</span>
                         {(unidad || p.codigo_interno) && (
@@ -556,7 +556,7 @@ export default function POS() {
                     </div>
                     <div className="flex items-center gap-3">
                       <StockBadge stock={p.stock} minimo={p.stock_minimo} />
-                      <span className="font-mono text-blue font-semibold text-sm">
+                      <span className="font-mono text-primary font-semibold text-sm">
                         {formatCOP(getPrecio(p, listaPrecio))}
                       </span>
                     </div>
@@ -600,7 +600,7 @@ export default function POS() {
                 }
               }}
               placeholder="Código barras"
-              className="w-full pl-8 pr-3 py-2.5 bg-gray-50 border-2 border-gray-100 rounded-xl focus:bg-white focus:border-blue focus:outline-none text-sm transition-all"
+              className="w-full pl-8 pr-3 py-2.5 bg-gray-50 border-2 border-gray-100 rounded-xl focus:bg-white focus:border-primary focus:outline-none text-sm transition-all"
             />
           </div>
 
@@ -620,7 +620,7 @@ export default function POS() {
             <select
               value={listaPrecio}
               onChange={(e) => setPrecioListaOverride(parseInt(e.target.value))}
-              className="bg-gray-50 border-2 border-gray-100 rounded-xl text-sm py-2.5 px-2.5 focus:outline-none focus:border-blue transition-all"
+              className="bg-gray-50 border-2 border-gray-100 rounded-xl text-sm py-2.5 px-2.5 focus:outline-none focus:border-primary transition-all"
             >
               <option value={1}>Lista 1</option>
               <option value={2}>Lista 2</option>
@@ -638,7 +638,7 @@ export default function POS() {
             <span className="hidden sm:inline font-medium">NC</span>
           </button>
 
-          <label className={`flex items-center gap-2 px-3 py-2.5 border-2 rounded-xl text-sm cursor-pointer transition-all select-none ${esDomicilio ? 'bg-blue/10 border-blue/30 text-blue' : 'bg-gray-50 border-gray-100 text-gray-500 hover:bg-white hover:border-gray-200'}`}>
+          <label className={`flex items-center gap-2 px-3 py-2.5 border-2 rounded-xl text-sm cursor-pointer transition-all select-none ${esDomicilio ? 'bg-primary/10 border-primary/30 text-primary' : 'bg-gray-50 border-gray-100 text-gray-500 hover:bg-white hover:border-gray-200'}`}>
             <input type="checkbox" checked={esDomicilio}
               onChange={(e) => setEsDomicilio(e.target.checked)} className="sr-only" />
             <Truck size={16} />
@@ -690,7 +690,7 @@ export default function POS() {
             {items.map((item, idx) => {
               const calc = calcularItem(item);
               return (
-                <tr key={item._key} className="border-b border-border/30 hover:bg-blue/5 transition-colors">
+                <tr key={item._key} className="border-b border-border/30 hover:bg-primary/5 transition-colors">
                   <td className="py-2 text-gray-400">{idx + 1}</td>
                   <td className="py-2">
                     <div className="font-medium text-gray-800 leading-tight text-sm truncate max-w-[200px]">
@@ -707,7 +707,7 @@ export default function POS() {
                     <StockBadge stock={item.stock} minimo={item.stock_minimo} />
                   </td>
                   <td className="py-2 text-right font-mono text-gray-700">{formatCOP(item.precio_unitario)}</td>
-                  <td className={`py-2 text-center text-xs font-medium ${item.iva === 19 ? 'text-blue' : item.iva === 5 ? 'text-green' : item.iva === -1 ? 'text-red' : 'text-gray-400'}`}>
+                  <td className={`py-2 text-center text-xs font-medium ${item.iva === 19 ? 'text-primary' : item.iva === 5 ? 'text-green' : item.iva === -1 ? 'text-red' : 'text-gray-400'}`}>
                     {item.iva === -1 ? 'Excluido' : item.iva === 0 ? '0%' : `${item.iva}%`}
                   </td>
                   <td className="py-2">
@@ -715,7 +715,7 @@ export default function POS() {
                       type="number"
                       value={item.cantidad}
                       onChange={(e) => actualizarCantidad(item._key, parseFloat(e.target.value) || 0)}
-                      className="w-16 text-center bg-gray-50 border border-gray-200 rounded-lg text-sm py-1.5 focus:outline-none focus:border-blue focus:bg-white transition-all"
+                       className="w-16 text-center bg-gray-50 border border-gray-200 rounded-lg text-sm py-1.5 focus:outline-none focus:border-primary focus:bg-white transition-all"
                       min="0"
                       step="any"
                     />
@@ -725,7 +725,7 @@ export default function POS() {
                       type="number"
                       value={item.descuento_porcentaje}
                       onChange={(e) => puedeDescontar ? actualizarDesc(item._key, Math.min(100, Math.max(0, parseFloat(e.target.value) || 0))) : null}
-                      className={`w-16 text-center bg-gray-50 border border-gray-200 rounded-lg text-sm py-1.5 focus:outline-none focus:border-blue transition-all ${puedeDescontar ? '' : 'opacity-50 cursor-not-allowed'}`}
+                       className={`w-16 text-center bg-gray-50 border border-gray-200 rounded-lg text-sm py-1.5 focus:outline-none focus:border-primary transition-all ${puedeDescontar ? '' : 'opacity-50 cursor-not-allowed'}`}
                       min="0"
                       max="100"
                       step="1"
@@ -740,7 +740,7 @@ export default function POS() {
                           onClick={() => setObsPopover(obsPopover === item._key ? null : item._key)}
                           className={`p-1.5 rounded-lg transition-colors ${
                             item.observacion
-                              ? 'text-blue bg-blue/10'
+                              ? 'text-primary bg-primary/10'
                               : 'text-gray-400 hover:text-gray-600 hover:bg-gray-100'
                           }`}
                           title="Observación"
@@ -799,7 +799,7 @@ export default function POS() {
               <span>Desc: <span className="font-mono text-gray-700 font-medium">{formatCOP(totales.descuentos)}</span></span>
             </div>
             <div className="flex items-center gap-4">
-              <div className="text-2xl lg:text-3xl font-bold font-mono text-blue">
+              <div className="text-2xl lg:text-3xl font-bold font-mono text-primary">
                 Total: {formatCOP(totales.total)}
               </div>
               {items.length > 0 && (
@@ -926,14 +926,14 @@ export default function POS() {
                   setShowPresModal(false);
                   setPresParaProducto(null);
                 }}
-                className="w-full text-left px-4 py-3.5 rounded-xl border border-border hover:border-blue/30 hover:bg-blue/5 transition-all flex items-center justify-between"
+                className="w-full text-left px-4 py-3.5 rounded-xl border border-border hover:border-primary/30 hover:bg-primary/5 transition-all flex items-center justify-between"
               >
                 <div>
                   <p className="font-medium text-gray-800">{p.nombre}</p>
                   {p.codigo_barras && <p className="text-xs text-gray-400 font-mono">{p.codigo_barras}</p>}
                 </div>
                 <div className="text-right">
-                  <p className="font-mono text-blue font-semibold">{formatCOP(getPrecio(p, listaPrecio))}</p>
+                  <p className="font-mono text-primary font-semibold">{formatCOP(getPrecio(p, listaPrecio))}</p>
                   <p className="text-xs text-gray-400">Factor: {p.factor}</p>
                 </div>
               </button>
@@ -947,11 +947,11 @@ export default function POS() {
           <div className="flex gap-2 mb-3 border-b border-border">
             <button
               onClick={() => setShowCrearCliente(false)}
-              className={`pb-2.5 px-3 text-sm font-medium transition-colors ${!showCrearCliente ? 'text-blue border-b-2 border-blue' : 'text-gray-400 hover:text-gray-600'}`}
+              className={`pb-2.5 px-3 text-sm font-medium transition-colors ${!showCrearCliente ? 'text-primary border-b-2 border-primary' : 'text-gray-400 hover:text-gray-600'}`}
             >Buscar</button>
             <button
               onClick={() => setShowCrearCliente(true)}
-              className={`pb-2.5 px-3 text-sm font-medium transition-colors ${showCrearCliente ? 'text-blue border-b-2 border-blue' : 'text-gray-400 hover:text-gray-600'}`}
+              className={`pb-2.5 px-3 text-sm font-medium transition-colors ${showCrearCliente ? 'text-primary border-b-2 border-primary' : 'text-gray-400 hover:text-gray-600'}`}
             >Crear nuevo</button>
           </div>
 
@@ -1038,7 +1038,7 @@ export default function POS() {
                         setBusquedaCliente('');
                       }}
                       className={`w-full text-left px-3 py-2.5 rounded-xl text-sm hover:bg-gray-50 flex items-center justify-between ${
-                        clienteActual?.id === c.id ? 'bg-blue/10 border border-blue/30' : ''
+                          clienteActual?.id === c.id ? 'bg-primary/10 border border-primary/30' : ''
                       }`}
                     >
                       <div className="flex items-center gap-2 min-w-0">
@@ -1065,7 +1065,7 @@ export default function POS() {
         <Modal titulo={`Factura ${facturaCreada.numero}`} onClose={() => setFacturaCreada(null)} ancho="max-w-lg">
           <div className="space-y-4">
             <div className="text-center border-b border-border pb-4">
-              <p className="text-3xl font-bold font-mono text-blue">{formatCOP(facturaCreada.total)}</p>
+              <p className="text-3xl font-bold font-mono text-primary">{formatCOP(facturaCreada.total)}</p>
               <p className="text-sm text-gray-500 capitalize">{facturaCreada.medio_pago}</p>
             </div>
 

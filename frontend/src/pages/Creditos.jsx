@@ -143,7 +143,7 @@ export default function Creditos() {
                 </td>
                 <td className="p-3">
                   <div className="flex items-center justify-center gap-1">
-                    <button onClick={() => verDetalle(c.id)} className="p-1.5 rounded-lg hover:bg-gray-100 text-blue" title="Ver detalle">
+                    <button onClick={() => verDetalle(c.id)} className="p-1.5 rounded-lg hover:bg-gray-100 text-primary" title="Ver detalle">
                       <Eye size={16} />
                     </button>
                     {c.estado === 'activo' && tienePermiso('registrar_abono') && (

@@ -131,7 +131,7 @@ export default function Cambios() {
       {toast && <Toast {...toast} onClose={() => setToast(null)} />}
 
       <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-        <Package size={20} className="text-blue" /> Cambios y devoluciones
+        <Package size={20} className="text-primary" /> Cambios y devoluciones
       </h2>
 
       <div className="card mb-4">
@@ -215,7 +215,7 @@ export default function Cambios() {
                   <button
                     key={p.id}
                     onClick={() => { setReemplazo(p); setBusquedaReemplazo(p.nombre); setProductosReemplazo([]); }}
-                    className={`w-full text-left px-3 py-2 rounded-lg text-sm hover:bg-gray-50 flex justify-between items-center ${reemplazo?.id === p.id ? 'bg-blue/10 ring-1 ring-blue/30' : ''}`}
+                    className={`w-full text-left px-3 py-2 rounded-lg text-sm hover:bg-gray-50 flex justify-between items-center ${reemplazo?.id === p.id ? 'bg-primary/10 ring-1 ring-primary/30' : ''}`}
                   >
                     <div className="min-w-0">
                       <span className="block truncate">{p.nombre}</span>
@@ -231,7 +231,7 @@ export default function Cambios() {
               </div>
             )}
             {reemplazo && (
-              <div className="mt-2 flex items-center justify-between bg-blue/5 px-3 py-2 rounded-lg">
+              <div className="mt-2 flex items-center justify-between bg-primary/5 px-3 py-2 rounded-lg">
                 <span className="text-sm font-medium">{reemplazo.nombre}</span>
                 <button onClick={() => { setReemplazo(null); setBusquedaReemplazo(''); }} className="text-red text-xs hover:underline">Quitar</button>
               </div>
@@ -263,8 +263,8 @@ export default function Cambios() {
                   onClick={() => setMotivo(m)}
                   className={`text-xs px-3 py-1.5 rounded-full border transition-colors ${
                     motivo === m
-                      ? 'bg-blue text-white border-blue'
-                      : 'border-border hover:border-blue/30 text-gray-600'
+                      ? 'bg-primary text-white border-primary'
+                      : 'border-border hover:border-primary/30 text-gray-600'
                   }`}
                 >
                   {m}

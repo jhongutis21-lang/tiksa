@@ -4,12 +4,12 @@ import Toast from '../components/Toast';
 import { hoyColombia } from '../utils/colombia';
 
 const ACCIONES = {
-  factura_creada: { label: 'Factura creada', color: 'text-blue' },
+  factura_creada: { label: 'Factura creada', color: 'text-primary' },
   factura_anulada: { label: 'Factura anulada', color: 'text-red' },
   factura_eliminada: { label: 'Factura eliminada', color: 'text-red' },
   producto_creado: { label: 'Producto creado', color: 'text-green' },
   stock_ajustado: { label: 'Stock ajustado', color: 'text-yellow' },
-  usuario_creado: { label: 'Usuario creado', color: 'text-blue' },
+  usuario_creado: { label: 'Usuario creado', color: 'text-primary' },
   usuario_activado: { label: 'Usuario activado', color: 'text-green' },
   usuario_desactivado: { label: 'Usuario desactivado', color: 'text-red' },
   cambio_procesado: { label: 'Cambio procesado', color: 'text-yellow' },
@@ -106,7 +106,7 @@ export default function Auditoria() {
             onClick={() => setFiltroDias(o.value)}
             className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
               filtroDias === o.value
-                ? 'bg-blue text-white'
+                ? 'bg-primary text-white'
                 : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
             }`}
           >

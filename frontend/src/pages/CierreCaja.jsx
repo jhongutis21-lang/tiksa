@@ -101,10 +101,10 @@ export default function CierreCaja() {
       {resumen && (
         <div className="space-y-6">
           {resumen.apertura && (
-            <div className="card bg-blue/5 border-blue/20">
+            <div className="card bg-primary/5 border-primary/20">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-blue">Caja abierta</p>
+                  <p className="text-sm font-medium text-primary">Caja abierta</p>
                   <p className="text-xs text-gray-500">
                     {new Date(resumen.apertura.fecha_apertura).toLocaleString('es-CO', { timeZone: 'America/Bogota' })} 
                     {resumen.apertura.monto_inicial > 0 && ` — Monto inicial: ${formatCOP(resumen.apertura.monto_inicial)}`}
@@ -120,11 +120,11 @@ export default function CierreCaja() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <div className="card">
               <p className="text-gray-500 text-sm mb-1">Ventas POS</p>
-              <p className="text-2xl font-bold font-mono text-blue">{formatCOP(resumen.total_pos)}</p>
+              <p className="text-2xl font-bold font-mono text-primary">{formatCOP(resumen.total_pos)}</p>
             </div>
             <div className="card">
               <p className="text-gray-500 text-sm mb-1">Ventas electrónicas</p>
-              <p className="text-2xl font-bold font-mono text-blue">{formatCOP(resumen.total_pe)}</p>
+              <p className="text-2xl font-bold font-mono text-primary">{formatCOP(resumen.total_pe)}</p>
             </div>
             <div className="card">
               <p className="text-gray-500 text-sm mb-1">Total gastos</p>
@@ -154,7 +154,7 @@ export default function CierreCaja() {
           {resumen.movimientos?.length > 0 && (
             <div className="card">
               <h3 className="font-semibold text-gray-800 mb-3 flex items-center gap-2">
-                <CircleDollarSign size={18} className="text-blue" />
+                <CircleDollarSign size={18} className="text-primary" />
                 Movimientos de caja
               </h3>
               <div className="overflow-x-auto">
@@ -248,7 +248,7 @@ export default function CierreCaja() {
                 </div>
               )}
 
-              <div className="card border-blue/30">
+              <div className="card border-primary/30">
               <h3 className="font-semibold text-gray-800 mb-3">Arqueo de caja</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="text-center p-4 bg-gray-50 rounded-lg">

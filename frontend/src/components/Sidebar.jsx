@@ -18,7 +18,7 @@ export default function Sidebar() {
     <aside className="w-64 bg-sidebar min-h-screen flex flex-col">
       <div className="p-6 pb-4">
         <h1 className="text-white text-xl font-bold flex items-center gap-2.5">
-          <span className="w-8 h-8 bg-blue rounded-lg flex items-center justify-center text-white text-sm font-bold">T</span>
+          <span className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white text-sm font-bold">T</span>
           tiksa
         </h1>
       </div>
@@ -43,7 +43,7 @@ export default function Sidebar() {
                     className={({ isActive }) =>
                       `flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-all duration-150 ${
                         isActive
-                          ? 'bg-blue/15 text-blue font-medium shadow-sm'
+                          ? 'bg-primary/15 text-primary font-medium shadow-sm'
                           : 'text-gray-400 hover:bg-white/5 hover:text-gray-200'
                       }`
                     }
@@ -60,7 +60,7 @@ export default function Sidebar() {
 
       <div className="p-3 mt-auto">
         <div className="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-white/5 mb-1">
-          <div className="w-8 h-8 rounded-full bg-blue/30 flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
+          <div className="w-8 h-8 rounded-full bg-primary/30 flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
             {usuario?.nombre?.charAt(0).toUpperCase() || 'U'}
           </div>
           <div className="flex-1 min-w-0">

@@ -10,7 +10,7 @@ export default function Topbar({ titulo }) {
       </div>
       <div className="flex items-center gap-3">
         <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-full bg-blue/10 flex items-center justify-center text-blue text-sm font-bold">
+          <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">
             {usuario?.nombre?.charAt(0).toUpperCase() || 'U'}
           </div>
           <div className="hidden sm:block">

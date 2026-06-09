@@ -161,7 +161,7 @@ export default function Dashboard() {
             { key: 'mes', label: 'Mes' },
           ].map(({ key, label }) => (
             <button key={key} onClick={() => setFechaSel(key)}
-              className={`px-3 py-1.5 rounded-md font-medium transition-colors ${fechaSel === key ? 'bg-white text-blue shadow-sm' : 'text-gray-500 hover:text-gray-800'}`}>
+              className={`px-3 py-1.5 rounded-md font-medium transition-colors ${fechaSel === key ? 'bg-white text-primary shadow-sm' : 'text-gray-500 hover:text-gray-800'}`}>
               {label}
             </button>
           ))}
@@ -192,7 +192,7 @@ export default function Dashboard() {
 
       <div className="card">
         <h3 className="font-semibold text-gray-800 mb-4 flex items-center gap-2">
-          <BarChart3 size={18} className="text-blue" /> Ventas últimos 7 días
+          <BarChart3 size={18} className="text-primary" /> Ventas últimos 7 días
         </h3>
         {ventasSemana.length > 0 ? (
           <ResponsiveContainer width="100%" height={260}>
@@ -239,7 +239,7 @@ export default function Dashboard() {
 
         <div className="card">
           <h3 className="font-semibold text-gray-800 mb-3 flex items-center gap-2 text-sm">
-            <Truck size={16} className="text-blue" /> Domicilios hoy
+            <Truck size={16} className="text-primary" /> Domicilios hoy
           </h3>
           {domiciliosHoy ? (
             <>
@@ -248,8 +248,8 @@ export default function Dashboard() {
                   <p className="text-lg font-bold text-yellow">{domiciliosHoy.pendientes}</p>
                   <p className="text-[10px] text-gray-500 uppercase tracking-wide">Pend.</p>
                 </div>
-                <div className="bg-blue/5 rounded-lg py-2">
-                  <p className="text-lg font-bold text-blue">{domiciliosHoy.camino}</p>
+                <div className="bg-primary/5 rounded-lg py-2">
+                  <p className="text-lg font-bold text-primary">{domiciliosHoy.camino}</p>
                   <p className="text-[10px] text-gray-500 uppercase tracking-wide">Camino</p>
                 </div>
                 <div className="bg-green/5 rounded-lg py-2">
@@ -275,7 +275,7 @@ export default function Dashboard() {
             <>
               <p className="text-2xl font-bold font-mono text-red">{formatCOP(reportes.creditos_pendientes.total)}</p>
               <p className="text-sm text-gray-500 mt-1">{reportes.creditos_pendientes.cantidad} facturas</p>
-              <Link to="/creditos" className="mt-3 inline-block text-xs text-blue font-medium hover:underline">Ir a Créditos →</Link>
+              <Link to="/creditos" className="mt-3 inline-block text-xs text-primary font-medium hover:underline">Ir a Créditos →</Link>
             </>
           ) : (
             <EmptyPlaceholder icon={CreditCard} mensaje="No hay créditos pendientes" />
@@ -285,7 +285,7 @@ export default function Dashboard() {
 
       <div className="card">
         <h3 className="font-semibold text-gray-800 mb-4 flex items-center gap-2">
-          <Landmark size={18} className="text-blue" /> Métodos de pago
+          <Landmark size={18} className="text-primary" /> Métodos de pago
         </h3>
         {donutData.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
@@ -352,7 +352,7 @@ export default function Dashboard() {
 
         <div className="card">
           <h3 className="font-semibold text-gray-800 mb-3 flex items-center gap-2 text-sm">
-            <Activity size={16} className="text-blue" /> Horas pico
+            <Activity size={16} className="text-primary" /> Horas pico
           </h3>
           {horasPico?.horas?.some(h => h.transacciones > 0) ? (
             <>
@@ -370,7 +370,7 @@ export default function Dashboard() {
                 </BarChart>
               </ResponsiveContainer>
               {horasPico.hora_pico !== null && (
-                <p className="mt-2 text-xs text-blue font-medium">
+                <p className="mt-2 text-xs text-primary font-medium">
                   Hora pico: {horasPico.horas.find(h => h.hora === horasPico.hora_pico)?.label} — {horasPico.transacciones_pico} transacciones
                 </p>
               )}
@@ -386,7 +386,7 @@ export default function Dashboard() {
           <div className="flex items-center justify-between mb-3">
             <h3 className="font-semibold text-gray-800 flex items-center gap-2 text-sm"><Flame size={16} className="text-orange" /> Más vendidos</h3>
             {resumen?.top_productos?.length > MAX_VISIBLE && showAll.top && (
-              <button onClick={() => toggleSection('top')} className="text-xs text-blue font-medium hover:underline flex items-center gap-1">
+              <button onClick={() => toggleSection('top')} className="text-xs text-primary font-medium hover:underline flex items-center gap-1">
                 Ver menos <ChevronUp size={14} />
               </button>
             )}
@@ -420,7 +420,7 @@ export default function Dashboard() {
                 </table>
               </div>
               {!showAll.top && resumen.top_productos.length > MAX_VISIBLE && (
-                <button onClick={() => toggleSection('top')} className="mt-2 text-xs text-blue font-medium hover:underline flex items-center gap-1">
+                <button onClick={() => toggleSection('top')} className="mt-2 text-xs text-primary font-medium hover:underline flex items-center gap-1">
                   Ver {resumen.top_productos.length} <ChevronDown size={14} />
                 </button>
               )}
@@ -432,9 +432,9 @@ export default function Dashboard() {
 
         <div className="card">
           <div className="flex items-center justify-between mb-3">
-            <h3 className="font-semibold text-gray-800 flex items-center gap-2 text-sm"><FileText size={16} className="text-blue" /> Últimas facturas</h3>
+            <h3 className="font-semibold text-gray-800 flex items-center gap-2 text-sm"><FileText size={16} className="text-primary" /> Últimas facturas</h3>
             {resumen?.ultimas_facturas?.length > MAX_VISIBLE && showAll.fact && (
-              <button onClick={() => toggleSection('fact')} className="text-xs text-blue font-medium hover:underline flex items-center gap-1">
+              <button onClick={() => toggleSection('fact')} className="text-xs text-primary font-medium hover:underline flex items-center gap-1">
                 Ver menos <ChevronUp size={14} />
               </button>
             )}
@@ -446,7 +446,7 @@ export default function Dashboard() {
                   <div key={f.id} className="flex items-center justify-between py-2 text-sm border-b border-border/30 last:border-0">
                     <span className="font-mono text-gray-400 w-20 text-xs">{f.numero}</span>
                     <span className="font-mono font-medium text-gray-800 w-24 text-right">{formatCOP(f.total)}</span>
-                    <span className={`text-[10px] font-medium px-2 py-0.5 rounded-full w-18 text-center capitalize ${f.medio_pago === 'efectivo' ? 'bg-green/10 text-green' : f.medio_pago === 'debito' ? 'bg-azul/10 text-azul' : f.medio_pago === 'credito' ? 'bg-red/10 text-red' : 'bg-purple/10 text-purple'}`}>
+                    <span className={`text-[10px] font-medium px-2 py-0.5 rounded-full w-18 text-center capitalize ${f.medio_pago === 'efectivo' ? 'bg-green/10 text-green' : f.medio_pago === 'debito' ? 'bg-blue/10 text-blue' : f.medio_pago === 'credito' ? 'bg-red/10 text-red' : 'bg-purple/10 text-purple'}`}>
                       {f.medio_pago}
                     </span>
                     <span className="text-gray-500 flex-1 text-right truncate ml-2 text-xs">{f.cliente_nombre}</span>
@@ -454,7 +454,7 @@ export default function Dashboard() {
                 ))}
               </div>
               {!showAll.fact && resumen.ultimas_facturas.length > MAX_VISIBLE && (
-                <button onClick={() => toggleSection('fact')} className="mt-2 text-xs text-blue font-medium hover:underline flex items-center gap-1">
+                <button onClick={() => toggleSection('fact')} className="mt-2 text-xs text-primary font-medium hover:underline flex items-center gap-1">
                   Ver {resumen.ultimas_facturas.length} <ChevronDown size={14} />
                 </button>
               )}
@@ -521,7 +521,7 @@ export default function Dashboard() {
               <CircleX size={16} className="text-red" />
               <span className="font-medium text-red text-sm">{resumen.productos_rojos.length} producto(s) agotado(s)</span>
             </div>
-            <Link to="/inventario" className="text-xs text-blue font-medium hover:underline">Ir a Inventario →</Link>
+            <Link to="/inventario" className="text-xs text-primary font-medium hover:underline">Ir a Inventario →</Link>
           </div>
         </div>
       )}

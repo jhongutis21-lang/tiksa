@@ -185,9 +185,9 @@ export default function NotaCreditoModal({ onClose, onCreada }) {
               </div>
             ) : (
               <>
-                <div className="bg-blue/5 border border-blue/20 rounded-lg p-3 text-sm flex items-center justify-between">
+                <div className="bg-primary/5 border border-primary/20 rounded-lg p-3 text-sm flex items-center justify-between">
                   <div>
-                    <p className="font-medium text-blue">Factura {factura.numero}</p>
+                    <p className="font-medium text-primary">Factura {factura.numero}</p>
                     <p className="text-gray-500 text-xs">
                       {new Date(factura.fecha).toLocaleDateString('es-CO')} — {factura.cliente_nombre}
                     </p>
@@ -204,7 +204,7 @@ export default function NotaCreditoModal({ onClose, onCreada }) {
                       <div
                         key={item.id}
                         className={`flex items-center gap-2 p-2 rounded-lg border cursor-pointer transition-colors ${
-                          cant > 0 ? 'border-blue/30 bg-blue/5' : 'border-border hover:border-gray-300'
+                          cant > 0 ? 'border-primary/30 bg-primary/5' : 'border-border hover:border-gray-300'
                         }`}
                       >
                         <input

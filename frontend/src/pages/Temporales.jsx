@@ -122,7 +122,7 @@ export default function Temporales() {
                       {total > 0 && (
                         <span>
                           <span className="text-gray-400">Total estimado:</span>{' '}
-                          <span className="font-mono font-medium text-blue">{formatCOP(total)}</span>
+                          <span className="font-mono font-medium text-primary">{formatCOP(total)}</span>
                         </span>
                       )}
                     </div>

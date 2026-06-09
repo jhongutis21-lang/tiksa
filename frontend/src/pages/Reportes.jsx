@@ -53,7 +53,7 @@ export default function Reportes() {
       {toast && <Toast {...toast} onClose={() => setToast(null)} />}
 
       <div className="flex items-center justify-between flex-wrap gap-3">
-        <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2"><BarChart3 size={20} className="text-blue" /> Reportes de ventas</h2>
+        <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2"><BarChart3 size={20} className="text-primary" /> Reportes de ventas</h2>
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-2">
             <label className="text-sm text-gray-500">Desde</label>

@@ -35,10 +35,10 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-sidebar via-sidebar to-blue-900 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-sidebar via-sidebar to-primary-900 px-4">
       <div className="w-full max-w-sm bg-white rounded-2xl shadow-2xl p-8">
         <div className="text-center mb-7">
-          <div className="w-14 h-14 bg-blue rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-blue/30">
+          <div className="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-primary/30">
             <span className="text-white text-2xl font-bold">T</span>
           </div>
           <h1 className="text-2xl font-bold text-gray-800">tiksa</h1>
@@ -61,7 +61,7 @@ export default function Login() {
               type="text"
               value={usuario}
               onChange={(e) => setUsuario(e.target.value)}
-              className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-100 rounded-xl focus:bg-white focus:border-blue focus:outline-none text-sm transition-all"
+              className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-100 rounded-xl focus:bg-white focus:border-primary focus:outline-none text-sm transition-all"
               placeholder="Ingresa tu usuario"
               autoFocus
             />
@@ -76,7 +76,7 @@ export default function Login() {
                 type={verContrasena ? 'text' : 'password'}
                 value={contrasena}
                 onChange={(e) => setContrasena(e.target.value)}
-                className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-100 rounded-xl focus:bg-white focus:border-blue focus:outline-none text-sm transition-all pr-12"
+                className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-100 rounded-xl focus:bg-white focus:border-primary focus:outline-none text-sm transition-all pr-12"
                 placeholder="Ingresa tu contraseña"
               />
               <button
@@ -93,7 +93,7 @@ export default function Login() {
           <button
             type="submit"
             disabled={cargando}
-            className="w-full py-3 bg-blue hover:bg-blue-800 text-white font-semibold rounded-xl transition-all disabled:opacity-50 flex items-center justify-center gap-2 shadow-lg shadow-blue/30 hover:shadow-blue/40"
+            className="w-full py-3 bg-primary hover:bg-primary-800 text-white font-semibold rounded-xl transition-all disabled:opacity-50 flex items-center justify-center gap-2 shadow-lg shadow-primary/30 hover:shadow-primary/40"
           >
             {cargando ? (
               <Loader size={20} className="animate-spin" />

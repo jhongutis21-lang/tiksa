@@ -119,7 +119,7 @@ export default function Clientes() {
                 <td className="p-3">
                   <div className="flex items-center gap-1">
                     {tienePermiso('editar_clientes') && (
-                      <button onClick={() => abrirEditar(c)} className="p-1.5 rounded-lg hover:bg-gray-100 transition-colors text-blue text-xs font-medium" title="Editar">
+                      <button onClick={() => abrirEditar(c)} className="p-1.5 rounded-lg hover:bg-gray-100 transition-colors text-primary text-xs font-medium" title="Editar">
                         Editar
                       </button>
                     )}

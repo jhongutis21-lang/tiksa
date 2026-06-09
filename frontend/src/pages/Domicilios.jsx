@@ -190,7 +190,7 @@ export default function Domicilios() {
             onClick={() => setTab('activos')}
             className={`px-4 py-2 text-sm font-medium border-b-2 transition-colors ${
               tab === 'activos'
-                ? 'border-blue text-blue'
+                ? 'border-primary text-primary'
                 : 'border-transparent text-gray-500 hover:text-gray-700'
             }`}
           >
@@ -200,7 +200,7 @@ export default function Domicilios() {
             onClick={() => setTab('historial')}
             className={`px-4 py-2 text-sm font-medium border-b-2 transition-colors ${
               tab === 'historial'
-                ? 'border-blue text-blue'
+                ? 'border-primary text-primary'
                 : 'border-transparent text-gray-500 hover:text-gray-700'
             }`}
           >
@@ -222,7 +222,7 @@ export default function Domicilios() {
               <div className="flex items-start justify-between">
                 <div>
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="font-mono font-medium text-blue">{d.factura_numero}</span>
+                    <span className="font-mono font-medium text-primary">{d.factura_numero}</span>
                     <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${estadoBadge(d.estado)}`}>
                       {estadoLabel(d.estado)}
                     </span>
@@ -261,7 +261,7 @@ export default function Domicilios() {
                 </button>
 
                 <div className="flex items-center gap-1 ml-auto">
-                  <button onClick={() => verFactura(d.factura_id)} className="p-1.5 rounded-lg hover:bg-gray-100 transition-colors text-blue" title="Ver factura">
+                        <button onClick={() => verFactura(d.factura_id)} className="p-1.5 rounded-lg hover:bg-gray-100 transition-colors text-primary" title="Ver factura">
                     <Eye size={16} />
                   </button>
                   {tienePermiso('anular_factura') && (
@@ -371,7 +371,7 @@ export default function Domicilios() {
                   </tr>
                 ) : historialData.map((d) => (
                   <tr key={d.id} className="border-b border-border/50 hover:bg-gray-50">
-                    <td className="p-3 font-mono font-medium text-blue">{d.factura_numero}</td>
+                    <td className="p-3 font-mono font-medium text-primary">{d.factura_numero}</td>
                     <td className="p-3">{d.dom_nombre || d.cliente_nombre}</td>
                     <td className="p-3 text-gray-500 max-w-[200px] truncate">{d.dom_direccion}</td>
                     <td className="p-3 text-center">
@@ -400,7 +400,7 @@ export default function Domicilios() {
                     <td className="p-3 text-right font-mono">{formatCOP(d.total)}</td>
                     <td className="p-3">
                       <div className="flex items-center justify-center gap-1">
-                        <button onClick={() => verFactura(d.factura_id)} className="p-1.5 rounded-lg hover:bg-gray-100 transition-colors text-blue" title="Ver factura">
+                  <button onClick={() => verFactura(d.factura_id)} className="p-1.5 rounded-lg hover:bg-gray-100 transition-colors text-primary" title="Ver factura">
                           <Eye size={16} />
                         </button>
                         {tienePermiso('anular_factura') && (
@@ -465,7 +465,7 @@ export default function Domicilios() {
                 <p className="text-sm text-gray-500">Subtotal: <span className="font-mono">{formatCOP(selected.subtotal)}</span></p>
                 <p className="text-sm text-gray-500">IVA 19%: <span className="font-mono">{formatCOP(selected.iva_19)}</span></p>
                 <p className="text-sm text-gray-500">IVA 5%: <span className="font-mono">{formatCOP(selected.iva_5)}</span></p>
-                <p className="text-lg font-bold font-mono text-blue">Total: {formatCOP(selected.total)}</p>
+                <p className="text-lg font-bold font-mono text-primary">Total: {formatCOP(selected.total)}</p>
               </div>
             </div>
           </div>

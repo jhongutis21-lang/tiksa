@@ -62,7 +62,7 @@ export const inicioSemanaColombia = () => {
 
 export const MEDIOS_PAGO_COLOR = {
   efectivo: 'bg-green-100 text-green-700 border-green-300',
-  debito: 'bg-azul-100 text-azul-700 border-azul-300',
+  debito: 'bg-blue-100 text-blue-700 border-blue-300',
   credito: 'bg-red-100 text-red-700 border-red-300',
   transferencia: 'bg-purple-100 text-purple-700 border-purple-300',
   nequi: 'bg-pink-100 text-pink-700 border-pink-300',
