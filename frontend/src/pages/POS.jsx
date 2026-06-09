@@ -538,7 +538,13 @@ export default function POS() {
               </button>
             )}
             {resultados.length > 0 && (
-              <div className="absolute top-full left-0 right-0 bg-white border border-border rounded-xl shadow-xl mt-1.5 z-10 max-h-72 overflow-y-auto">
+              <div className="absolute top-full left-0 right-0 bg-white border border-border rounded-xl shadow-xl mt-1.5 z-10">
+                <div className="px-3 py-1.5 text-[10px] text-gray-400 border-b border-border flex gap-3">
+                  <span>↑↓ Navegar</span>
+                  <span>Ctrl Marcar</span>
+                  <span>Enter Agregar</span>
+                </div>
+                <div className="max-h-72 overflow-y-auto">
                 {resultados.map((p, i) => {
                   const { base, unidad } = extraerUnidad(p.nombre);
                   return (
@@ -569,6 +575,7 @@ export default function POS() {
                   </button>
                 );})}
               </div>
+            </div>
             )}
             {busqueda.length >= 2 && resultados.length === 0 && (
               <div className="absolute top-full left-0 right-0 bg-white border border-border rounded-xl shadow-xl mt-1.5 z-10 p-4 text-center text-sm text-gray-400">
