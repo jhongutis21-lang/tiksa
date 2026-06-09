@@ -1,5 +1,4 @@
 <div align="center">
-  <img src="frontend/public/favicon.ico" alt="tiksa" width="64" height="64" />
   <h1>tiksa POS</h1>
   <p><strong>Tu negocio, en control.</strong></p>
   <p>Sistema de punto de venta (POS) completo para negocios colombianos.</p>
@@ -23,7 +22,7 @@
 
 ## Funcionalidades
 
-### 🛒 Punto de Venta (POS)
+### Punto de Venta (POS)
 - Búsqueda rápida de productos por nombre o código interno
 - Atajos de teclado (`Ctrl+K`, `Ctrl+B`, `Ctrl+Enter`, `+`/`-`, `Ctrl+D`, `Ctrl+Q`)
 - Lectura de códigos de barras
@@ -38,7 +37,7 @@
 - Generación de CUFE (código único de facturación electrónica)
 - Impresión de ticket
 
-### 📊 Dashboard
+### Dashboard
 - Indicadores clave: ventas, ganancia, número de facturas, ticket promedio
 - Gráfico de tendencia de ventas (7 días)
 - Desglose por método de pago
@@ -48,7 +47,7 @@
 - Alertas de créditos pendientes y productos sin stock
 - Resumen de domicilios del día
 
-### 📋 Historial de Facturas
+### Historial de Facturas
 - Listado paginado con filtros por fecha, método de pago, usuario y texto
 - Anular factura (restaura stock automáticamente)
 - **Anular y Copiar** — anula y abre los mismos ítems en POS
@@ -56,13 +55,13 @@
 - Vista previa / impresión de ticket
 - Exportar a CSV
 
-### 🚚 Domicilios
+### Domicilios
 - Flujo completo: Pendiente → Camino → Entregado
 - Botones de copia rápida: Copia Caja, Copia Despacho, Copia Repartidor
 - Anular factura desde domicilio
 - Historial con filtros
 
-### 📦 Inventario
+### Inventario
 - CRUD completo de productos
 - Categorías
 - Stock mínimo con indicadores (verde/amarillo/rojo)
@@ -72,7 +71,7 @@
 - IVA: 19%, 5%, 0%, Excluido
 - Desactivar producto (eliminación suave)
 
-### 👥 Clientes
+### Clientes
 - CRUD completo
 - Tipo de persona (Natural / Jurídica)
 - Régimen fiscal (Simplificado / Común / Gran contribuyente)
@@ -80,46 +79,46 @@
 - Cupo de crédito con saldo pendiente
 - Búsqueda por nombre o NIT
 
-### 💰 Cartera / Créditos
+### Cartera / Creditos
 - Facturas a crédito con saldo pendiente
 - Registro de abonos (parciales o totales)
 - Estado automático: activo → pagado
 
-### 💵 Cierre de Caja
+### Cierre de Caja
 - Apertura de caja
 - Movimientos de efectivo (ingresos / egresos)
 - Consignaciones bancarias
 - Cuadre de caja: esperado vs real
 - Resumen del día: ventas POS, electrónicas, gastos, ganancia, domicilios
 
-### 📈 Reportes
+### Reportes
 - Ventas por día (gráfico + tabla con IVA desglosado)
 - Productos más vendidos (cantidad e ingresos)
 - Ventas por método de pago
 - Indicadores: total ventas, ganancia, facturas, IVA
 
-### 💸 Gastos
+### Gastos
 - Registro de gastos por categoría
 - Filtro por fecha y categoría
 
-### 🔄 Notas Crédito
+### Notas Credito
 - Notas crédito totales y parciales
 - Desglose de IVA (19% y 5%)
 - Anular nota crédito (restaura inventario)
 
-### 🔁 Cambios y Devoluciones
+### Cambios y Devoluciones
 - Devolución contra factura original
 - Selección de ítems a devolver
 - Producto de reemplazo
 - Cálculo automático de diferencia
 - Causales: Producto defectuoso, Cambio de talla, No le gustó, Producto equivocado, Garantía
 
-### 👤 Usuarios
+### Usuarios
 - 4 roles: Admin, Encargado, Cajero, Domicilios
 - Permisos granulares por rol
 - Activar / desactivar usuarios
 
-### 📝 Auditoría
+### Auditoria
 - Registro de todas las acciones del sistema
 - Filtro por tipo, usuario y fecha
 - Limpieza de registros antiguos
@@ -209,4 +208,4 @@ Hecho con [OpenCode](https://opencode.ai) — asistido por inteligencia artifici
 
 ---
 
-<p align="center">Hecho con ❤️ para negocios colombianos 🇨🇴</p>
+<p align="center">Hecho para negocios colombianos</p>
