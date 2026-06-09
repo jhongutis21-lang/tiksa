@@ -8,7 +8,7 @@
     <img src="https://img.shields.io/badge/Express-4.21-000000?logo=express" alt="Express" />
     <img src="https://img.shields.io/badge/SQLite-better--sqlite3-003B57?logo=sqlite" alt="SQLite" />
     <img src="https://img.shields.io/badge/TailwindCSS-3.4-06B6D4?logo=tailwindcss" alt="TailwindCSS" />
-    <img src="https://img.shields.io/badge/license-MIT-green" alt="License" />
+    <img src="https://img.shields.io/badge/license-Custom-red" alt="License" />
   </p>
 </div>
 
@@ -202,7 +202,10 @@ JWT_EXPIRES_IN=8h
 
 ## Licencia
 
-**MIT License** — Copyright © 2026 **Jhonatan David Gutierrez Gutierrez**
+**Copyright © 2026 Jhonatan David Gutierrez Gutierrez — Todos los derechos reservados.**
+
+Se permite ver y leer el código con fines educativos o de consulta.  
+Queda prohibido copiar, modificar, distribuir o usar el software sin autorización previa por escrito del autor.
 
 Hecho con [OpenCode](https://opencode.ai) — asistido por inteligencia artificial.
 
